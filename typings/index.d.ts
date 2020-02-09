@@ -1237,13 +1237,13 @@ export class Markup {
 
   extra(options?: object): object;
 
-  keyboard(buttons: (Buttons | string)[] | (Buttons | string)[][], options?: object): Markup & tt.ReplyKeyboardMarkup;
+  keyboard(buttons: Array<Buttons | string | (Buttons | string)[]>, options?: object): Markup & tt.ReplyKeyboardMarkup;
 
   resize(value?: boolean): Markup;
 
   oneTime(value?: boolean): Markup;
 
-  inlineKeyboard(buttons: Buttons[] | Buttons[][], options: object): Markup & tt.InlineKeyboardMarkup;
+  inlineKeyboard(buttons: Array<Buttons | Buttons[]>, options: object): Markup & tt.InlineKeyboardMarkup;
 
   button(text: string, hide: boolean): Button;
 
@@ -1267,9 +1267,9 @@ export class Markup {
 
   static forceReply(value?: string): Markup;
 
-  static keyboard(buttons: (Buttons | string)[] | (Buttons | string)[][], options?: object): Markup & tt.ReplyKeyboardMarkup;
+  static keyboard(buttons: Array<Buttons | string | (Buttons | string)[]>, options?: object): Markup & tt.ReplyKeyboardMarkup;
 
-  static inlineKeyboard(buttons: CallbackButton[] | CallbackButton[][] | UrlButton[] | UrlButton[][], options?: object): Markup & tt.InlineKeyboardMarkup;
+  static inlineKeyboard(buttons: Array<CallbackButton | UrlButton | (CallbackButton | UrlButton)[]>, options?: object): Markup & tt.InlineKeyboardMarkup;
 
   static resize(value?: boolean): Markup;
 
